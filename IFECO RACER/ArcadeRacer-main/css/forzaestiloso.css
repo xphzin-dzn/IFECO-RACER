@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{
+    font-family: 'Press Start 2P', cursive;
+    text-align:center;
+    font-size:large;
+    color:white;
+}
+.fundo {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top:0vh;
+    left:0vw;
+    text-align: center;
+    display:flex;
+    justify-content:center;
+    overflow:hidden;
+    background-color:black;
+}
+.road1{
+    display:block;
+    width:100vw;
+    height:100vh;
+}
+#div2 {
+    position: absolute;
+    left:10vw;
+    bottom:35vh;
+    width: 10vw; 
+    height: 8vw;
+}
+.coin, .confetti{
+    margin:auto;
+    width:10vw;
+    height:8vw;
+	transform: rotateY(45deg);
+	animation: rotateAnimation 2s linear infinite;
+}
+.coin{
+    display:block;
+}
+.confetti{
+    display:none;
+}
+@keyframes rotateAnimation {
+	from {transform: rotateY(45deg);}
+	to {transform: rotateY(225deg);}
+}
+.car1, .car2, .car3, .explosion{
+    width: 15vw;
+    height: 20vw;
+}
+.car1{
+    display:block;
+}
+.car2, .car3, .explosion{
+    display:none;
+}
+#div1 {
+    position: absolute;
+    bottom: 7vh;
+    width: 15vw;
+    height: 20vw;
+}
+.smoke{
+    display:block;
+    bottom:3vh;
+    width:15vw;
+    height:7vw;
+}
+#timer, #points, .skin, #restart{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#timer{
+    position:absolute;
+    top:5vh;
+    left:5vw;
+    width:20vw;
+    height:10vh;
+}
+#points{
+    position:absolute;
+    top:5vh;
+    width:20vw;
+    height:10vh;
+}
+#pts{
+    position:absolute;
+    top:5vh;
+    width:20vw;
+    height:10vh;
+}
+.skin{
+    position:absolute;
+    top:5vh;
+    right:20vw;
+    width:10vw;
+    height:10vh;
+}
+#restart{
+    position:absolute;
+    top:5vh;
+    right:5vw;
+    width:10vw;
+    height:10vh;
+}
+.restart{
+    margin:auto;
+    width:10vw;
+    height:10vh;
+}
+.restart1, .restart2, .restart3{
+    margin:auto;
+    width:10vw;
+    height:10vh;
+}
+.restart1{
+    display:block;
+}
+.restart2, .restart3{
+    display:none;
+}
+.esq, .dir{
+    position:absolute;
+    bottom:5vh;
+    width:10vw;
+    height:10vw;
+    opacity:70%;
+}
+.esq{
+    left:5vw;
+}
+.dir{
+    right:5vw;
+}
+.esq:hover, .dir:hover{
+    bottom:0vh;
+    width:14vw;
+    height:14vw;
+    opacity:100%;
+}
+.esq:hover{
+    left:3vw;
+}
+.dir:hover{
+    right:3vw;
+}
+.left1, .left2, .left3, .right1, .right2, .right3{
+    margin:auto;
+    width:10vw;
+    height:10vw;
+}
+.left1, .right1{
+    display:block;
+}
+.left2, .left3, .right2, .right3{
+    display:none;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.button {
+    width: 15vw;
+    height: 10vh;
+    cursor: pointer;
+    background: rgb(131, 131, 131);
+    border-style:solid;
+    border: 0.25vw solid #f04b4b;
+    border-radius: 2vw;
+    box-shadow: -5px -5px 15px rgb(165, 165, 165), 5px 5px 15px #222, inset 5px 5px 10px rgb(165, 165, 165), inset -5px -5px 10px #222;
+}
+.button:hover {
+    box-shadow: -5px -5px 15px rgb(165, 165, 165), 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px rgb(165, 165, 165);
+    transition: 500ms;
+}
+.button:focus {
+    outline: none;
+}
+.red:hover {
+    color: #f04b4b;
+    text-shadow: 0px 0px 10px #f04b4b;
+}
