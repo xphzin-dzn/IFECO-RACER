@@ -11,11 +11,22 @@
     </head>
 	<body>
 		<div class="fundo" id="fundo">
-			<img src="../imgs/road7.gif" alt="i can't stand any more roads!" class="road1">
+			<img src="../imgs/hibrido.png" alt="i can't stand any more roads!" class="road1">
 			<div id="timer" class="noselect red button"></div>
 			<div id="points" class="noselect red button"></div>
-			<div class="noselect red button skin" id="cor">
+			<div class="noselect red button skin" id="cor" onClick="Opcoes();">
 				<img src="../imgs/skin.png" alt="false advertisement" class="restart">
+			</div>
+			<div id="opcoes" style="display: none;">
+				<div class="red button skin op1" onclick="Eletrico();">
+					Elétrico
+				</div>
+				<div class="red button skin op2" onclick="Hibrido();">
+					Híbrido
+				</div>
+				<div class="red button skin op3" onclick="Gasolina();">
+					Gasolina
+				</div>
 			</div>
 			<div id="restart" class="noselect red button" onClick="window.location.reload()">
 				<img src="../imgs/restart.png" alt="quitter" class="restart1">
@@ -27,7 +38,7 @@
 				<img src="../imgs/confetti.gif" alt="confetti betty" class="confetti">
 			</div>
 			<div id="div1">
-				<img src="../imgs/ifecocar.png" alt="Meh car tbh" class="car1">
+				<img src="../imgs/car1.png" alt="Meh car tbh" class="car1">
 				<img src="../imgs/car5.png" alt="Ferrari not Ferrari" class="car2">
 				<img src="../imgs/car7.png" alt="American Lambo" class="car3">
 				<img src="../imgs/smoke.gif" alt="smoking is bad" class="smoke">
@@ -66,7 +77,34 @@
 			let right1=document.querySelector(".right1");
 			let right2=document.querySelector(".right2");
 			let right3=document.querySelector(".right3");
+			let fundo=document.querySelector(".road1");
+			let carro=document.querySelector(".car1");
 			let count=0;
+			function Opcoes(){
+				opcoes=document.querySelector("#opcoes");
+				opcoes.style="display: block;";
+				skin.setAttribute("onclick","FechaOpcoes()");
+			}
+			function FechaOpcoes(){
+				opcoes=document.querySelector("#opcoes");
+				opcoes.style="display: none;";
+				skin.setAttribute("onclick","Opcoes()");
+			}
+			function Eletrico(){
+				fundo.src="../imgs/eletrico.png";
+				carro.src="../imgs/ifecocar.png";
+				FechaOpcoes();
+			}
+			function Hibrido(){
+				fundo.src="../imgs/gasolina.png";
+				carro.src="../imgs/car7.png";
+				FechaOpcoes();
+			}
+			function Gasolina(){
+				fundo.src="../imgs/hibrido.png";
+				carro.src="../imgs/car1.png";
+				FechaOpcoes();
+			}
             // mover cursor 2 - automático
 			function moverdireita(){
 				let div2Left= parseInt(getComputedStyle(div2).left);

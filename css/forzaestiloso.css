@@ -188,3 +188,17 @@
     color: #f04b4b;
     text-shadow: 0px 0px 10px #f04b4b;
 }
+#opcoes div{
+    position: absolute;
+    right: 20vw;
+    height: 7vh;
+}
+.op1{
+    top: 17vh;
+}
+.op2{
+    top: 26vh;
+}
+.op3{
+    top: 35vh;
+}
