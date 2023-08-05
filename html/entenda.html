@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog</title>
+    <title>Entenda</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+         @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+            body {
             line-height: 1.6;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #333;
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 24px;
+            background-color: #026937;
             color: #fff;
             text-align: center;
             padding: 1rem;
         }
 
         main {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             margin: 2rem;
         }
 
@@ -34,50 +40,97 @@
         }
 
         footer {
-            background-color: #333;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            grid-area: "footer";
+            background-color: #026937;
             color: #fff;
+            padding: 20px;
             text-align: center;
-            padding: 1rem;
         }
 
-        footer p {
-            margin: 0;
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer i {
+            margin-right: 5px;
+        }
+
+        /* Estilo para o botão */
+        .button {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 10px 20px;
+            background-color: #026937;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Roboto', Arial, sans-serif;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #038c4a;
+        }
+
+        /* Estilo para tornar o site responsivo */
+        @media (max-width: 768px) {
+            main {
+                margin: 1rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Meu Blog</h1>
+        <h1>ENTENDA</h1>
+        <a href="../index.html" class="button"> Menu Principal</a>
     </header>
 
     <main>
         <article>
-            <h2>Título do Post 1</h2>
+            <h2>IFECO RACER : O que é?</h2>
             <p>
-                Texto aleatório para o post 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Duis at nisl eu elit tristique accumsan. Quisque in felis vel mi feugiat dignissim at nec tortor.
-            </p>
-        </article>
-
-        <article>
-            <h2>Título do Post 2</h2>
-            <p>
-                Outro texto aleatório para o post 2. Vestibulum luctus lacinia velit, id mattis lorem elementum quis.
-                Vivamus dignissim, mauris eu fermentum vulputate, felis justo scelerisque velit, vel gravida nisi elit sit amet elit.
-            </p>
-        </article>
-
-        <article>
-            <h2>Título do Post 3</h2>
-            <p>
-                Mais um texto aleatório para o post 3. Phasellus eleifend ante vitae massa fermentum, in gravida est tincidunt.
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                Ifeco Racer é um jogo de corrida envolvente e educativo. Os jogadores assumem o controle de diferentes
+                veículos em uma variedade de cenários, onde o objetivo é resgatar o maior número de moedas possível em
+                apenas 1 minuto.
+                A característica única do jogo é que cada veículo tem um impacto distinto na visibilidade da pista e dos
+                ambientes. Os veículos movidos a gasolina emitem mais gases de efeito estufa, resultando em uma
+                visibilidade limitada, o que torna o cenário mais desafiador para os jogadores. Já os veículos híbridos
+                apresentam uma melhoria na visibilidade em relação aos veículos a gasolina, mas ainda não alcançam a
+                perfeição. Por outro lado, os veículos elétricos não emitem gases de escape, oferecendo aos jogadores
+                uma visibilidade perfeita no cenário do jogo.
+                Além da diversão proporcionada pela jogabilidade emocionante de coleta de moedas, Ifeco Racer também
+                busca conscientizar os jogadores sobre o impacto ambiental dos diferentes tipos de veículos. Com a
+                representação realista dos veículos e suas respectivas emissões de gases de efeito estufa, o jogo
+                incentiva os jogadores a considerarem a importância de escolher veículos mais ecológicos e sustentáveis.
+                Em resumo, Ifeco Racer é um jogo de corrida único que combina diversão e educação. Com sua mecânica
+                inovadora de visibilidade baseada no tipo de veículo, os jogadores são desafiados a coletar moedas em
+                cenários variados, ao mesmo tempo que aprendem sobre a importância de escolhas conscientes para o meio
+                ambiente.
             </p>
         </article>
     </main>
 
     <footer>
-        <p>&copy; 2023 Meu Blog. Todos os direitos reservados.</p>
+        <p>Entre em contato:</p>
+        <p><i class="fa fa-envelope"></i> equipeifeco@gmail.com</p>
+        <p><i class="fa fa-phone"></i> (53) 99129-1699</p>
+        <p><a href="https://goo.gl/maps/CL4KbvxQzXVfpD8f8"><i class="fa fa-map-marker"></i></a> Av. Alfredo Huch, 475,
+            Pavilhão 11, Sala 1121 (Rio Grande - RS)</p>
+        <p>
+            <a href="https://www.facebook.com/ifeco.ifrs/"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/ifeco.ifrs/"><i class="fa fa-instagram"></i></a>
+        </p>
+        <br>
+        <p>&copy; 2023 IFECO. Todos os direitos reservados.</p>
+
     </footer>
 </body>
+
 </html>
