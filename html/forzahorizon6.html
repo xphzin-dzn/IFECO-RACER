@@ -164,55 +164,7 @@
 				}
 			}
 			
-			function cor(){
-				if(cont == 0){
-					car1.style.display="none";
-					car2.style.display="block";
-					timer.style.border="0.25vw solid yellow";
-					pts.style.border="0.25vw solid yellow";
-					skin.style.border="0.25vw solid yellow";
-					restart.style.border="0.25vw solid yellow";
-					restart1.style.display="none";
-					restart2.style.display="block";
-					left1.style.display="none";
-					left2.style.display="block";
-					right1.style.display="none";
-					right2.style.display="block";
-					cont++;
-				}else{
-					if(cont == 1){
-						car2.style.display="none";
-						car3.style.display="block";
-						timer.style.border="0.25vw solid green";
-						pts.style.border="0.25vw solid green";
-						skin.style.border="0.25vw solid green";
-						restart.style.border="0.25vw solid green";
-						restart2.style.display="none";
-						restart3.style.display="block";
-						left2.style.display="none";
-						left3.style.display="block";
-						right2.style.display="none";
-						right3.style.display="block";
-						cont++;
-					}else{
-						if(cont == 2){
-							car3.style.display="none";
-							car1.style.display="block";
-							timer.style.border="0.25vw solid #f04b4b";
-							pts.style.border="0.25vw solid #f04b4b";
-							skin.style.border="0.25vw solid #f04b4b";
-							restart.style.border="0.25vw solid #f04b4b";
-							restart3.style.display="none";
-							restart1.style.display="block";
-							left3.style.display="none";
-							left1.style.display="block";
-							right3.style.display="none";
-							right1.style.display="block";
-							cont=0;
-						}
-					}
-				}
-		    }
+			
 			// Set the date we're counting down to
 			var countDownDate = (new Date().getTime())+1020*60;
 			// Update the count down every 1 second
@@ -237,46 +189,7 @@
 				document.querySelector("#div2").style.left=Math.random()*(parseFloat(fundo.style.width)-parseFloat(div2.style.width));
 			}
 			//Detect collisions
-			function colisao(){
-				let div1Left= parseInt(getComputedStyle(div1).left);
-				let div1Right=parseInt(getComputedStyle(div1).right);
-				let div1Top= parseInt(getComputedStyle(div1).top);
-				let div1Height= parseInt(getComputedStyle(div1).height);
-				let div1Width= parseInt(getComputedStyle(div1).width);
-				let div2Left= parseInt(getComputedStyle(div2).left);
-				let div2Top= parseInt(getComputedStyle(div2).top);
-				let div2Height= parseInt(getComputedStyle(div2).height);
-				let div2Width= parseInt(getComputedStyle(div2).width);
-				let fundoHeight= parseInt(getComputedStyle(fundo).height);
-				let fundoWidth= parseInt(getComputedStyle(fundo).width);
-				if(div1Left<=0){
-					div1.style.left=50;
-					dead();
-				}
-				if(div1Right<=0){
-					div1.style.left=50;
-					dead();
-				}
-				if(((div1Left+(div1Width/2))>=div2Left)&&((div1Left+(div1Width/2))<=(div2Left+div2Width))){
-					count++;
-					document.querySelector("#points").innerHTML=count;
-					/*
-					coin.style.display="none";
-					confetti.style.display="block";
-					*/
-					div2.style.left = Math.floor(Math.random()*(parseInt(fundoWidth)-parseInt(div2Width)));
-				}
-				/*
-				if (((div1Left >= div2Left)&&(div1Left <= div2Left + div2Width))&&((div1Top >= div2Top)&&(div1Top <= div2Top + div2Height))){
-					para2();
-					para();
-				}
-				if (((div2Left >= div1Left)&&(div2Left <= div1Left + div1Width))&&((div2Top >= div1Top)&&(div2Top <= div1Top + div1Height))){
-					para2();
-					para();
-				}
-				*/
-			}
+			
 			//spammable movement
 			window.addEventListener('keydown', (e)=>{
 				let carLeft= parseInt(getComputedStyle(div1).left);
