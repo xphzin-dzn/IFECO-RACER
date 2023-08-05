@@ -59,7 +59,7 @@
 			let audio=new Audio();
 			audio.src="../imgs/engine.wav";
 			audio.play();
-			let tiempo = setInterval(()=>{audio.play()},7000);
+			let tiempo = setInterval(()=>{audio.currenTime=0;audio.play()},5000);
 			function Opcoes(){
 				opcoes=document.querySelector("#opcoes");
 				opcoes.style="display: block;";
