@@ -9,6 +9,8 @@
         body {
           background-image: url('./imgs/fundo1.png');
           background-size: cover;
+          position: relative; /* Adiciona posição relativa ao body */
+          min-height: 100vh; /* Define altura mínima para ocupar a tela inteira */
         }
         .main {
           display: flex;
@@ -20,8 +22,14 @@
             width: 400px;
             height: 400px;
         }
+        .buttons-container {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+          width: 100%;
+          max-width: 600px;
+        }
         .button{
-          margin-top: 0px;
           padding: 10px 20px;
           background-color: #39AA34;
           color: white;
@@ -32,6 +40,15 @@
           text-transform: uppercase;
           font-family: 'Luckiest Guy', cursive;
           text-decoration: none;
+        }
+        .footer {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          color: #fff;
+          font-size: 14px;
+          text-align: right;
+          font-family: Arial, sans-serif;
         }
         @media only screen and (max-width: 600px) {
           .logo {
@@ -45,17 +62,23 @@
           .body{
             background-image: url('./imgs/fundo1.png');
           }
+          .buttons-container {
+            flex-direction: column;
+            align-items: center;
+          }
         }
     </style>
 </head>
 <body>
    <div class="main">
        <img class="logo" src="./imgs/ifeco_racer_logo_test__1_-removebg-preview.png">
-       <a href="html/forzahorizon6.html" class="button">Jogar</a>
+       <div class="buttons-container">
+          <a href="html/forzahorizon6.html" class="button">Jogar</a>
+          <a href="html/entenda.html" class="button">Entenda</a>
+       </div>
    </div>
-   <div class="main">
-    <img class="logo" src="./imgs/ifeco_racer_logo_test__1_-removebg-preview.png">
-    <a href="html/entenda.html" class="button">Entenda</a>
-</div>
+   <div class="footer">
+     Desenvolvido por: Alan Mota, Pedro Eduardo Santos e Pedro Henrique Oliveira
+   </div>
 </body>
 </html>
