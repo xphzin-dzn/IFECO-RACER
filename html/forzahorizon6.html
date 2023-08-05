@@ -1,12 +1,10 @@
-<!--observations
-	-change game colors with car change
--->
+
 <!DOCTYPE ><!--DO NOT MAKE IT DOCTYPE html!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 <html lang="pt-br">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Document</title>
+		<title>IFECO RACER</title>
 		<link rel="stylesheet" href="../css/forzaestiloso.css">
     </head>
 	<body>
@@ -30,8 +28,6 @@
 			</div>
 			<div id="restart" class="noselect green button" onClick="window.location.reload()">
 				<img src="../imgs/restart.png" alt="quitter" class="restart1">
-				<img src="../imgs/restart2.png" alt="quitter" class="restart2">
-				<img src="../imgs/restart3.png" alt="quitter" class="restart3">
 			</div>
 			<div id="div2" >
 				<img src="../imgs/coin.png" alt="Coinzzz bb" class="coin">
@@ -40,19 +36,14 @@
 			<div id="div1">
 				<img src="../imgs/car1.png" alt="Meh car tbh" class="car1">
 				<img src="../imgs/car5.png" alt="Ferrari not Ferrari" class="car2">
-				<img src="../imgs/car7.png" alt="American Lambo" class="car3">
 				<img src="../imgs/smoke.gif" alt="smoking is bad" class="smoke">
 				<img src="../imgs/explosion.gif" alt="yes Rico, kaboom" class="explosion">
 			</div>
 			<div class="esq"  id="esquerda">
 				<img src="../imgs/left.png" alt="British way" class="left1">
-				<img src="../imgs/left2.png" alt="British way" class="left2">
-				<img src="../imgs/left3.png" alt="British way" class="left3">
 			</div>
 			<div class="dir"  id="direita">
 				<img src="../imgs/right.png" alt="American way" class="right1">
-				<img src="../imgs/right2.png" alt="American way" class="right2">
-				<img src="../imgs/right3.png" alt="American way" class="right3">
 			</div>
 		</div>
 		<script>
@@ -97,7 +88,7 @@
 			}
 			function Hibrido(){
 				fundo.src="../imgs/gasolina.png";
-				carro.src="../imgs/car7.png";
+				carro.src="../imgs/car5.png";
 				FechaOpcoes();
 			}
 			function Gasolina(){
@@ -161,23 +152,23 @@
 			function end() {
 				clearInterval(timer);
 				clearInterval(m);
-				let name=prompt("What is your gamertag?");
+				let name=prompt("Qual seu nome?");
 				if(count<5){
-					alert("Seems like your need some more practicing.\nYou made "+count+" points.");
+					alert("Parece que precisas praticar mais.\nFizestes "+count+" pontos.");
 				}
 				if(count>=5&&count<10){
-					alert("You're getting the hang of this.\nYou made "+count+" points.");
+					alert("Você manda bem.\nFizestes "+count+" pontos.");
 				}
 				if(count>=10){
-					alert("Wow, you're really good at this!\nYou made "+count+" points.");
+					alert("Wow, tu jogas muitoooo\nFizestes "+count+" pontos.");
 				}
 				if(count>100){
-					alert("OK, I'm presumimg you're a bot and closing the window.\nYou made "+count+" points. Good day.");
+					alert("ok, você não é um humano, fecharei esta janela.\nFizestes "+count+" pontos. Bom dia.");
 					window.close();
 				}
-				let replay=prompt("Do you want to play again? (YES/NO)")
+				let replay=prompt("Jogar novamente? (SIM/NÃO)")
 				replay=replay.toUpperCase();
-				if(replay=="YES"){
+				if(replay=="SIM"){
 					window.location.reload();
 				}else{
 					alert("Thankyou for playing!");
@@ -192,23 +183,23 @@
 				car3.style.display="none";
 				smoke.style.display="none";
 				explosion.style.display="block";
-				let name=prompt("What is your gamertag?");
+				let name=prompt("Qual seu nome?");
 				if(count<5){
-					alert("Seems like your need some more practicing.\nYou made "+count+" points.");
+					alert("Parece que precisas praticar mais.\nFizestes "+count+" pontos.");
 				}
 				if(count>=5&&count<10){
-					alert("You're getting the hang of this.\nYou made "+count+" points.");
+					alert("Você manda bem.\nFizestes "+count+" pontos.");
 				}
 				if(count>=10){
-					alert("Wow, you're really good at this!\nYou made "+count+" points.");
+					alert("Wow, tu jogas muitoooo\nFizestes "+count+" pontos.");
 				}
 				if(count>100){
-					alert("OK, I'm presumimg you're a bot and closing the window.\nYou made "+count+" points. Good day.");
+					alert("ok, você não é um humano, fecharei esta janela.\nFizestes "+count+" pontos. Bom dia.");
 					window.close();
 				}
-				let replay=prompt("Do you want to play again? (YES/NO)")
+				let replay=prompt("Jogar novamente? (SIM/NÃO)")
 				replay=replay.toUpperCase();
-				if(replay=="YES"){
+				if(replay=="SIM"){
 					window.location.reload();
 				}else{
 					alert("Thankyou for playing!");
