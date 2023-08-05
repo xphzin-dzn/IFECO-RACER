@@ -31,13 +31,10 @@
 			</div>
 			<div id="div2" >
 				<img src="../imgs/coin.png" alt="Coinzzz bb" class="coin">
-				<img src="../imgs/confetti.gif" alt="confetti betty" class="confetti">
 			</div>
 			<div id="div1">
 				<img src="../imgs/car1.png" alt="Meh car tbh" class="car1">
-				<img src="../imgs/car5.png" alt="Ferrari not Ferrari" class="car2">
 				<img src="../imgs/smoke.gif" alt="smoking is bad" class="smoke">
-				<img src="../imgs/explosion.gif" alt="yes Rico, kaboom" class="explosion">
 			</div>
 			<div class="esq"  id="esquerda">
 				<img src="../imgs/left.png" alt="British way" class="left1">
@@ -47,27 +44,15 @@
 			</div>
 		</div>
 		<script>
-			let car1=document.querySelector(".ifecocar");
-			let car2=document.querySelector(".car2");
-			let car3=document.querySelector(".car3");
 			let smoke=document.querySelector(".smoke");
-			let explosion=document.querySelector(".explosion");
 			let coin=document.querySelector(".coinf");
-			let confetti=document.querySelector(".confetti");
 			document.querySelector("#points").innerHTML="0000";
 			let timer=document.querySelector("#timer");
 			let pts=document.querySelector("#points");
 			let skin=document.querySelector("#cor");
 			let restart=document.querySelector("#restart");
-			let restart1=document.querySelector(".restart1");
-			let restart2=document.querySelector(".restart2");
-			let restart3=document.querySelector(".restart3");
 			let left1=document.querySelector(".left1");
-			let left2=document.querySelector(".left2");
-			let left3=document.querySelector(".left3");
 			let right1=document.querySelector(".right1");
-			let right2=document.querySelector(".right2");
-			let right3=document.querySelector(".right3");
 			let fundo=document.querySelector(".road1");
 			let carro=document.querySelector(".car1");
 			let count=0;
@@ -84,19 +69,22 @@
 			function Eletrico(){
 				fundo.src="../imgs/eletrico.png";
 				carro.src="../imgs/ifecocar.png";
+				smoke.style.display="none"
 				FechaOpcoes();
 			}
 			function Hibrido(){
 				fundo.src="../imgs/gasolina.png";
 				carro.src="../imgs/car5.png";
+				smoke.style.display="block"
 				FechaOpcoes();
 			}
 			function Gasolina(){
 				fundo.src="../imgs/hibrido.png";
 				carro.src="../imgs/car1.png";
+				smoke.style.display="block"
 				FechaOpcoes();
 			}
-            // mover cursor 2 - automático
+            // moeda
 			function moverdireita(){
 				let div2Left= parseInt(getComputedStyle(div2).left);
 				let fundoWidth= parseInt(getComputedStyle(fundo).width);
