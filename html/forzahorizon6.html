@@ -188,6 +188,7 @@
 			function spawns(){
 				document.querySelector("#div2").style.left=Math.random()*(parseFloat(fundo.style.width)-parseFloat(div2.style.width));
 			}
+
 			//Detect collisions
 			
 			//spammable movement
@@ -215,7 +216,7 @@
 			let contador = 0;
             		let cont = 0;
 	   		let m = setInterval("moverdireita()", 1250); //Funções que são chamadas a cada 15 e 5 milisegundos
-			
+			let n = setInterval("colisao()",5);
 			let s = setInterval("spawns()", 15);
             document.querySelector("#esquerda").addEventListener("click",()=>{esquerda()});
             document.querySelector("#direita").addEventListener("click",()=>{direita()});
