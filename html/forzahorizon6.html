@@ -163,37 +163,7 @@
 					window.close();
 				}
 			}
-			function dead() {
-				clearInterval(timer);
-				clearInterval(m);
-				car1.style.display="none";
-				car2.style.display="none";
-				car3.style.display="none";
-				smoke.style.display="none";
-				explosion.style.display="block";
-				let name=prompt("Qual seu nome?");
-				if(count<5){
-					alert("Parece que precisas praticar mais.\nFizestes "+count+" pontos.");
-				}
-				if(count>=5&&count<10){
-					alert("Você manda bem.\nFizestes "+count+" pontos.");
-				}
-				if(count>=10){
-					alert("Wow, tu jogas muitoooo\nFizestes "+count+" pontos.");
-				}
-				if(count>100){
-					alert("ok, você não é um humano, fecharei esta janela.\nFizestes "+count+" pontos. Bom dia.");
-					window.close();
-				}
-				let replay=prompt("Jogar novamente? (SIM/NÃO)")
-				replay=replay.toUpperCase();
-				if(replay=="SIM"){
-					window.location.reload();
-				}else{
-					alert("Thankyou for playing!");
-					window.close();
-				}
-			}
+			
 			function cor(){
 				if(cont == 0){
 					car1.style.display="none";
