@@ -56,10 +56,6 @@
 			let fundo=document.querySelector(".road1");
 			let carro=document.querySelector(".car1");
 			let count=0;
-			let audio=new Audio();
-			audio.src="../imgs/engine.wav";
-			audio.play();
-			let tiempo = setInterval(()=>{audio.currenTime=0;audio.play()},3000);
 			function Opcoes(){
 				opcoes=document.querySelector("#opcoes");
 				opcoes.style="display: block;";
@@ -74,25 +70,18 @@
 				fundo.src="../imgs/eletrico.png";
 				carro.src="../imgs/ifecocar.png";
 				smoke.style.display="none"
-				clearInterval(tiempo);
-				audio.pause();
-				audio.currentTime=0;
 				FechaOpcoes();
 			}
 			function Hibrido(){
 				fundo.src="../imgs/gasolina.png";
 				carro.src="../imgs/car5.png";
 				smoke.style.display="block"
-				audio.play();
-				let tiempo = setInterval(()=>{audio.currenTime=0;audio.play()},3000);
 				FechaOpcoes();
 			}
 			function Gasolina(){
 				fundo.src="../imgs/hibrido.png";
 				carro.src="../imgs/car1.png";
 				smoke.style.display="block"
-				audio.play();
-				let tiempo = setInterval(()=>{audio.currenTime=0;audio.play()},3000);
 				FechaOpcoes();
 			}
             // moeda
