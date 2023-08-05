@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
 *{
     font-family: 'Press Start 2P', cursive;
     text-align:center;
@@ -173,7 +173,7 @@
     cursor: pointer;
     background: rgb(131, 131, 131);
     border-style:solid;
-    border: 0.25vw solid #f04b4b;
+    border: 0.25vw solid #026937;
     border-radius: 2vw;
     box-shadow: -5px -5px 15px rgb(165, 165, 165), 5px 5px 15px #222, inset 5px 5px 10px rgb(165, 165, 165), inset -5px -5px 10px #222;
 }
@@ -185,8 +185,8 @@
     outline: none;
 }
 .red:hover {
-    color: #f04b4b;
-    text-shadow: 0px 0px 10px #f04b4b;
+    color: #026937;
+    text-shadow: 0px 0px 10px #026937;
 }
 #opcoes div{
     position: absolute;
