@@ -188,6 +188,46 @@
 			function spawns(){
 				document.querySelector("#div2").style.left=Math.random()*(parseFloat(fundo.style.width)-parseFloat(div2.style.width));
 			}
+			function colisao(){
+				let div1Left= parseInt(getComputedStyle(div1).left);
+				let div1Right=parseInt(getComputedStyle(div1).right);
+				let div1Top= parseInt(getComputedStyle(div1).top);
+				let div1Height= parseInt(getComputedStyle(div1).height);
+				let div1Width= parseInt(getComputedStyle(div1).width);
+				let div2Left= parseInt(getComputedStyle(div2).left);
+				let div2Top= parseInt(getComputedStyle(div2).top);
+				let div2Height= parseInt(getComputedStyle(div2).height);
+				let div2Width= parseInt(getComputedStyle(div2).width);
+				let fundoHeight= parseInt(getComputedStyle(fundo).height);
+				let fundoWidth= parseInt(getComputedStyle(fundo).width);
+				if(div1Left<=0){
+					div1.style.left=50;
+					console.log("esquerda")
+				}
+				if(div1Right<=0){
+					div1.style.left=50;
+					console.log("direita")
+				}
+				if(((div1Left+(div1Width/2))>=div2Left)&&((div1Left+(div1Width/2))<=(div2Left+div2Width))){
+					count++;
+					document.querySelector("#points").innerHTML=count;
+					/*
+					coin.style.display="none";
+					confetti.style.display="block";
+					*/
+					div2.style.left = Math.floor(Math.random()*(parseInt(fundoWidth)-parseInt(div2Width)));
+				}
+				/*
+				if (((div1Left >= div2Left)&&(div1Left <= div2Left + div2Width))&&((div1Top >= div2Top)&&(div1Top <= div2Top + div2Height))){
+					para2();
+					para();
+				}
+				if (((div2Left >= div1Left)&&(div2Left <= div1Left + div1Width))&&((div2Top >= div1Top)&&(div2Top <= div1Top + div1Height))){
+					para2();
+					para();
+				}
+				*/
+			}
 
 			//Detect collisions
 			
