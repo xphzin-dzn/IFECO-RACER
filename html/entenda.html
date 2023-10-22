@@ -122,25 +122,27 @@
     </footer>
 
     <script>
-        // Recupere os dados do Local Storage
-        const playerData = JSON.parse(localStorage.getItem('playerData')) || [];
+             // Função para preencher a tabela com os nomes dos jogadores
+             function preencherRanking() {
+            const rankingBody = document.getElementById('ranking-body');
+            rankingBody.innerHTML = ''; // Limpa a tabela antes de atualizar
 
-        // Selecione a tabela onde os dados serão exibidos
-        const tableBody = document.getElementById('ranking-body');
+            // Recupera os nomes dos jogadores do Local Storage
+            const playerNames = JSON.parse(localStorage.getItem('playerNames')) || [];
 
-        // Limpe o conteúdo atual da tabela
-        tableBody.innerHTML = '';
+            // Preenche a tabela com os nomes dos jogadores
+            playerNames.forEach((name, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${name}</td>
+                `;
+                rankingBody.appendChild(row);
+            });
+        }
 
-        // Percorra o array de dados e adicione-os à tabela
-        playerData.forEach((player, index) => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-    <td>${index + 1}</td>
-    <td>${player.name}</td>
-    <td>${player.score}</td>
-  `;
-            tableBody.appendChild(row);
-        });
+        // Chamada inicial para preencher a tabela de ranking quando a página é carregada
+        preencherRanking();
     </script>
 
 </body>
