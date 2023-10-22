@@ -47,6 +47,7 @@
 	</div>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11.7.21/dist/sweetalert2.all.min.js"></script>
 	<script>
+
 		let smoke = document.querySelector(".smoke");
 		let coin = document.querySelector(".coinf");
 		document.querySelector("#points").innerHTML = "0000";
@@ -143,20 +144,6 @@
 		function end() {
 			clearInterval(timer);
 			clearInterval(m);
-			let name = prompt("Qual seu nome?");
-			if (count < 5) {
-				alert("Parece que precisas praticar mais. "+ name +"\nFizestes " + count + " pontos.");
-			}
-			if (count >= 5 && count < 10) {
-				alert("Você manda bem " + name +"\nFizestes " + count + " pontos.");
-			}
-			if (count >= 10) {
-				alert("Wow, tu jogas muitoooo " + name +"\nFizestes " + count + " pontos.");
-			}
-			if (count > 100) {
-				alert("ok, você não é um humano, fecharei esta janela. " + name +"\nFizestes " + count + " pontos.");
-				window.close();
-			}
 			let replay = prompt("Jogar novamente? (SIM/NÃO)")
 			replay = replay.toUpperCase();
 			if (replay == "SIM") {
@@ -166,129 +153,139 @@
 				window.close();
 			}
 		}
+		  // Recupere a pontuação salva no Local Storage (se existir)
+		  let playerScores = JSON.parse(localStorage.getItem('playerScores')) || [];
 
+// Função para salvar a pontuação
+function salvarPontuacao(pontuacao) {
+	playerScores.push(pontuacao);
+	localStorage.setItem('playerScores', JSON.stringify(playerScores));
+}
 
+// Exemplo de como salvar uma pontuação
+const novaPontuacao = count; // Substitua pelo valor da pontuação do jogo
+salvarPontuacao(novaPontuacao);
 
-		// Set the date we're counting down to
-		var countDownDate = (new Date().getTime()) + 1020 * 60;
-		// Update the count down every 1 second
-		var x = setInterval(function () {
-			// Get today's date and time
-			var now = new Date().getTime();
-			// Find the distance between now and the count down date
-			var distance = countDownDate - now;
-			// Time calculations for days, hours, minutes and seconds
-			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-			// Display the result in the element with id="demo"
-			document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
-			// If the count down is finished, write some text
-			if (distance <= 0) {
-				clearInterval(x);
-				end();
+			// Set the date we're counting down to
+			var countDownDate = (new Date().getTime()) + 1020 * 60;
+			// Update the count down every 1 second
+			var x = setInterval(function () {
+				// Get today's date and time
+				var now = new Date().getTime();
+				// Find the distance between now and the count down date
+				var distance = countDownDate - now;
+				// Time calculations for days, hours, minutes and seconds
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				// Display the result in the element with id="demo"
+				document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
+				// If the count down is finished, write some text
+				if (distance <= 0) {
+					clearInterval(x);
+					end();
+				}
+			}, 1000);
+			//Spawning coins
+			function spawns() {
+				document.querySelector("#div2").style.left = Math.random() * (parseFloat(fundo.style.width) - parseFloat(div2.style.width));
 			}
-		}, 1000);
-		//Spawning coins
-		function spawns() {
-			document.querySelector("#div2").style.left = Math.random() * (parseFloat(fundo.style.width) - parseFloat(div2.style.width));
-		}
-		function colisao() {
-			let div1Left = parseInt(getComputedStyle(div1).left);
-			let div1Right = parseInt(getComputedStyle(div1).right);
-			let div1Top = parseInt(getComputedStyle(div1).top);
-			let div1Height = parseInt(getComputedStyle(div1).height);
-			let div1Width = parseInt(getComputedStyle(div1).width);
-			let div2Left = parseInt(getComputedStyle(div2).left);
-			let div2Top = parseInt(getComputedStyle(div2).top);
-			let div2Height = parseInt(getComputedStyle(div2).height);
-			let div2Width = parseInt(getComputedStyle(div2).width);
-			let fundoHeight = parseInt(getComputedStyle(fundo).height);
-			let fundoWidth = parseInt(getComputedStyle(fundo).width);
-			if (div1Left <= 0) {
-				div1.style.left = 50;
-				console.log("esquerda")
-			}
-			if (div1Right <= 0) {
-				div1.style.left = fundoWidth - 250;
-				console.log(fundoWidth - 50);
-				console.log("direita")
-			}
-			if (((div1Left + (div1Width / 2)) >= div2Left) && ((div1Left + (div1Width / 2)) <= (div2Left + div2Width))) {
-				count++;
-				document.querySelector("#points").innerHTML = count;
+			function colisao() {
+				let div1Left = parseInt(getComputedStyle(div1).left);
+				let div1Right = parseInt(getComputedStyle(div1).right);
+				let div1Top = parseInt(getComputedStyle(div1).top);
+				let div1Height = parseInt(getComputedStyle(div1).height);
+				let div1Width = parseInt(getComputedStyle(div1).width);
+				let div2Left = parseInt(getComputedStyle(div2).left);
+				let div2Top = parseInt(getComputedStyle(div2).top);
+				let div2Height = parseInt(getComputedStyle(div2).height);
+				let div2Width = parseInt(getComputedStyle(div2).width);
+				let fundoHeight = parseInt(getComputedStyle(fundo).height);
+				let fundoWidth = parseInt(getComputedStyle(fundo).width);
+				if (div1Left <= 0) {
+					div1.style.left = 50;
+					console.log("esquerda")
+				}
+				if (div1Right <= 0) {
+					div1.style.left = fundoWidth - 250;
+					console.log(fundoWidth - 50);
+					console.log("direita")
+				}
+				if (((div1Left + (div1Width / 2)) >= div2Left) && ((div1Left + (div1Width / 2)) <= (div2Left + div2Width))) {
+					count++;
+					document.querySelector("#points").innerHTML = count;
+					/*
+					coin.style.display="none";
+					confetti.style.display="block";
+					*/
+					div2.style.left = Math.floor(Math.random() * (parseInt(fundoWidth) - parseInt(div2Width)));
+				}
 				/*
-				coin.style.display="none";
-				confetti.style.display="block";
+				if (((div1Left >= div2Left)&&(div1Left <= div2Left + div2Width))&&((div1Top >= div2Top)&&(div1Top <= div2Top + div2Height))){
+					para2();
+					para();
+				}
+				if (((div2Left >= div1Left)&&(div2Left <= div1Left + div1Width))&&((div2Top >= div1Top)&&(div2Top <= div1Top + div1Height))){
+					para2();
+					para();
+				}
 				*/
-				div2.style.left = Math.floor(Math.random() * (parseInt(fundoWidth) - parseInt(div2Width)));
 			}
-			/*
-			if (((div1Left >= div2Left)&&(div1Left <= div2Left + div2Width))&&((div1Top >= div2Top)&&(div1Top <= div2Top + div2Height))){
-				para2();
-				para();
+			function abrirControles() {
+				let timerInterval
+				Swal.fire({
+					imageUrl: '../imgs/controles.png',
+					timer: 2000,
+					timerProgressBar: true,
+					didOpen: () => {
+						Swal.showLoading()
+						const b = Swal.getHtmlContainer().querySelector('b')
+						timerInterval = setInterval(() => {
+							b.textContent = Swal.getTimerLeft()
+						}, 100)
+					},
+					willClose: () => {
+						clearInterval(timerInterval)
+					}
+				}).then((result) => {
+					if (result.dismiss === Swal.DismissReason.timer) {
+						console.log('fecha')
+					}
+				})
 			}
-			if (((div2Left >= div1Left)&&(div2Left <= div1Left + div1Width))&&((div2Top >= div1Top)&&(div2Top <= div1Top + div1Height))){
-				para2();
-				para();
-			}
-			*/
-		}
-		function abrirControles() {
-			let timerInterval
-			Swal.fire({
-				imageUrl: '../imgs/controles.png',
-				timer: 2000,
-				timerProgressBar: true,
-				didOpen: () => {
-					Swal.showLoading()
-					const b = Swal.getHtmlContainer().querySelector('b')
-					timerInterval = setInterval(() => {
-						b.textContent = Swal.getTimerLeft()
-					}, 100)
-				},
-				willClose: () => {
-					clearInterval(timerInterval)
+
+			//Detect collisions
+
+			//spammable movement
+			window.addEventListener('load', abrirControles);
+
+			window.addEventListener('keydown', (e) => {
+				let carLeft = parseInt(getComputedStyle(div1).left);
+				if (e.key == "a" || e.key == "ArrowLeft") {
+					div1.style.left = carLeft - 20;
+					div1.style.transform = "rotate(-15deg)";
 				}
-			}).then((result) => {
-				if (result.dismiss === Swal.DismissReason.timer) {
-					console.log('fecha')
+				if (e.key == "d" || e.key == "ArrowRight") {
+					div1.style.left = carLeft + 20;
+					div1.style.transform = "rotate(15deg)";
 				}
-			})
-		}
-
-		//Detect collisions
-
-		//spammable movement
-		window.addEventListener('load', abrirControles);
-
-		window.addEventListener('keydown', (e) => {
-			let carLeft = parseInt(getComputedStyle(div1).left);
-			if (e.key == "a" || e.key == "ArrowLeft") {
-				div1.style.left = carLeft - 20;
-				div1.style.transform = "rotate(-15deg)";
-			}
-			if (e.key == "d" || e.key == "ArrowRight") {
-				div1.style.left = carLeft + 20;
-				div1.style.transform = "rotate(15deg)";
-			}
-		});
-		window.addEventListener('keyup', (e) => {
-			let carLeft = parseInt(getComputedStyle(div1).left);
-			if (e.key == "a" || e.key == "ArrowLeft") {
-				div1.style.transform = "rotate(0deg)";
-			}
-			if (e.key == "d" || e.key == "ArrowRight") {
-				div1.style.transform = "rotate(0deg)";
-			}
-		});
-		//Ao carregar a página estas linhas são executadas. 
-		let contador = 0;
-		let cont = 0;
-		let m = setInterval("moverdireita()", 1250); //Funções que são chamadas a cada 15 e 5 milisegundos
-		let n = setInterval("colisao()", 5);
-		let s = setInterval("spawns()", 15);
-		document.querySelector("#esquerda").addEventListener("click", () => { esquerda() });
-		document.querySelector("#direita").addEventListener("click", () => { direita() });
+			});
+			window.addEventListener('keyup', (e) => {
+				let carLeft = parseInt(getComputedStyle(div1).left);
+				if (e.key == "a" || e.key == "ArrowLeft") {
+					div1.style.transform = "rotate(0deg)";
+				}
+				if (e.key == "d" || e.key == "ArrowRight") {
+					div1.style.transform = "rotate(0deg)";
+				}
+			});
+			//Ao carregar a página estas linhas são executadas. 
+			let contador = 0;
+			let cont = 0;
+			let m = setInterval("moverdireita()", 1250); //Funções que são chamadas a cada 15 e 5 milisegundos
+			let n = setInterval("colisao()", 5);
+			let s = setInterval("spawns()", 15);
+			document.querySelector("#esquerda").addEventListener("click", () => { esquerda() });
+			document.querySelector("#direita").addEventListener("click", () => { direita() });
 
 
 	</script>
