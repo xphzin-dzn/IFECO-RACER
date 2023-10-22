@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:400,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-         @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-            body {
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+        body {
             line-height: 1.6;
             margin: 0;
             padding: 0;
@@ -92,31 +93,19 @@
         <a href="../index.html" class="button"> Menu Principal</a>
     </header>
 
-    <main>
-        <article>
-            <h2>IFECO RACER : O que é?</h2>
-            <p>
-                Ifeco Racer é um jogo de corrida envolvente e educativo. Os jogadores assumem o controle de diferentes
-                veículos em uma variedade de cenários, onde o objetivo é resgatar o maior número de moedas possível em
-                apenas 1 minuto.
-                A característica única do jogo é que cada veículo tem um impacto distinto na visibilidade da pista e dos
-                ambientes. Os veículos movidos a gasolina emitem mais gases de efeito estufa, resultando em uma
-                visibilidade limitada, o que torna o cenário mais desafiador para os jogadores. Já os veículos híbridos
-                apresentam uma melhoria na visibilidade em relação aos veículos a gasolina, mas ainda não alcançam a
-                perfeição. Por outro lado, os veículos elétricos não emitem gases de escape, oferecendo aos jogadores
-                uma visibilidade perfeita no cenário do jogo.
-                Além da diversão proporcionada pela jogabilidade emocionante de coleta de moedas, Ifeco Racer também
-                busca conscientizar os jogadores sobre o impacto ambiental dos diferentes tipos de veículos. Com a
-                representação realista dos veículos e suas respectivas emissões de gases de efeito estufa, o jogo
-                incentiva os jogadores a considerarem a importância de escolher veículos mais ecológicos e sustentáveis.
-                Em resumo, Ifeco Racer é um jogo de corrida único que combina diversão e educação. Com sua mecânica
-                inovadora de visibilidade baseada no tipo de veículo, os jogadores são desafiados a coletar moedas em
-                cenários variados, ao mesmo tempo que aprendem sobre a importância de escolhas conscientes para o meio
-                ambiente.
-            </p>
-        </article>
-    </main>
-
+    <h2>Pontuações dos Jogadores</h2>
+    <table class="ranking-table">
+        <thead>
+            <tr>
+                <th>Nome do Jogador</th>
+                <th>Pontuação</th>
+            </tr>
+        </thead>
+        <tbody id="ranking-body">
+            <!-- Os dados do ranking serão preenchidos dinamicamente aqui -->
+        </tbody>
+    </table>
+    </section>
     <footer>
         <p>Entre em contato:</p>
         <p><i class="fa fa-envelope"></i> equipeifeco@gmail.com</p>
@@ -131,6 +120,29 @@
         <p>&copy; 2023 IFECO. Todos os direitos reservados.</p>
 
     </footer>
+
+    <script>
+        // Recupere os dados do Local Storage
+        const playerData = JSON.parse(localStorage.getItem('playerData')) || [];
+
+        // Selecione a tabela onde os dados serão exibidos
+        const tableBody = document.getElementById('ranking-body');
+
+        // Limpe o conteúdo atual da tabela
+        tableBody.innerHTML = '';
+
+        // Percorra o array de dados e adicione-os à tabela
+        playerData.forEach((player, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+    <td>${index + 1}</td>
+    <td>${player.name}</td>
+    <td>${player.score}</td>
+  `;
+            tableBody.appendChild(row);
+        });
+    </script>
+
 </body>
 
 </html>
