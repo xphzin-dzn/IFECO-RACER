@@ -73,12 +73,39 @@
    <div class="main">
        <img class="logo" src="./imgs/ifeco_racer_logo_test__1_-removebg-preview.png">
        <div class="buttons-container">
+        
           <a href="html/forzahorizon6.html" class="button">Jogar</a>
-          <a href="html/entenda.html" class="button">Entenda</a>
+          <a href="html/entenda.html" class="button">Ranking</a>
        </div>
+       <br><br>
+       <input type="text" id="playerNameInput" placeholder="Digite seu nome" style="font-size: 20px; padding: 10px;">
+       <br>
+        <button id="saveNameButton" class="button">Salvar Nome</button>
    </div>
    <div class="footer">
      Desenvolvido por: Alan Motta, Pedro Eduardo Santos e Pedro Henrique Oliveira
    </div>
+   <script>
+   document.getElementById('saveNameButton').addEventListener('click', function () {
+    // Recupere o nome do jogador do campo de entrada
+    const playerName = document.getElementById('playerNameInput').value;
+
+    // Verifique se o nome não está vazio
+    if (playerName.trim() !== '') {
+        // Recupere a lista de nomes do Local Storage (se existir)
+        let playerNames = JSON.parse(localStorage.getItem('playerNames')) || [];
+
+        // Adicione o novo nome à lista
+        playerNames.push(playerName);
+
+        // Salve a lista de nomes atualizada no Local Storage
+        localStorage.setItem('playerNames', JSON.stringify(playerNames));
+
+        alert('Nome salvo com sucesso!');
+    } else {
+        alert('Por favor, digite um nome antes de salvar.');
+    }
+});
+   </script>
 </body>
 </html>
