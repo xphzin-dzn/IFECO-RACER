@@ -59,7 +59,11 @@
 		let right1 = document.querySelector(".right1");
 		let fundo = document.querySelector(".road1");
 		let carro = document.querySelector(".car1");
-		let count = 0;
+		let playerScores = [0];
+		if(localStorage.getItem("playerScores")!=null){
+			playerScores = JSON.parse(localStorage.getItem("playerScores"));
+			playerScores.push(0);
+		}
 		function Opcoes() {
 			opcoes = document.querySelector("#opcoes");
 			opcoes.style = "display: block;";
@@ -153,18 +157,6 @@
 				window.close();
 			}
 		}
-		  // Recupere a pontuação salva no Local Storage (se existir)
-		  let playerScores = JSON.parse(localStorage.getItem('playerScores')) || [];
-
-// Função para salvar a pontuação
-function salvarPontuacao(pontuacao) {
-	playerScores.push(pontuacao);
-	localStorage.setItem('playerScores', JSON.stringify(playerScores));
-}
-
-// Exemplo de como salvar uma pontuação
-const novaPontuacao = count; // Substitua pelo valor da pontuação do jogo
-salvarPontuacao(novaPontuacao);
 
 			// Set the date we're counting down to
 			var countDownDate = (new Date().getTime()) + 1020 * 60;
@@ -211,8 +203,10 @@ salvarPontuacao(novaPontuacao);
 					console.log("direita")
 				}
 				if (((div1Left + (div1Width / 2)) >= div2Left) && ((div1Left + (div1Width / 2)) <= (div2Left + div2Width))) {
-					count++;
-					document.querySelector("#points").innerHTML = count;
+					playerScores[playerScores.length-1]++;
+					document.querySelector("#points").innerHTML = playerScores[playerScores.length-1];
+					console.log(playerScores);
+					localStorage.setItem("playerScores",JSON.stringify(playerScores));
 					/*
 					coin.style.display="none";
 					confetti.style.display="block";

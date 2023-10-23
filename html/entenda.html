@@ -128,14 +128,14 @@
             rankingBody.innerHTML = ''; // Limpa a tabela antes de atualizar
 
             // Recupera os nomes dos jogadores do Local Storage
-            const playerNames = JSON.parse(localStorage.getItem('playerNames')) || [];
-
+            const playerNames = JSON.parse(localStorage.getItem('playerNames'));
+            const playerScores = JSON.parse(localStorage.getItem('playerScores'))
             // Preenche a tabela com os nomes dos jogadores
-            playerNames.forEach((name, index) => {
+            playerNames.forEach((name,index) => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${index + 1}</td>
                     <td>${name}</td>
+                    <td>${playerScores[index]}</td>
                 `;
                 rankingBody.appendChild(row);
             });
